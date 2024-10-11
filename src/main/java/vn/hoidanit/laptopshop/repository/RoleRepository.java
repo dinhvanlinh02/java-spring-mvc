@@ -4,17 +4,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import vn.hoidanit.laptopshop.domain.Role;
 import vn.hoidanit.laptopshop.domain.User;
 import java.util.List;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface RoleRepository extends JpaRepository<Role, Long> {
 
-    User save(User hoidanit);
-
-    void deleteById(long id);
-
-    List<User> findOneByEmail(String email);
-
-    User findById(long id);
+    Role findByName(String name);
 }

@@ -42,8 +42,13 @@
                                                     Product information
                                                 </div>
                                                 <ul class="list-group list-group-flush">
+                                                    <img src="/images/product/${product1.image}"
+                                                        class="img-fluid rounded" alt="Image">
+
                                                     <li class="list-group-item">ID: ${product1.id}</li>
+
                                                     <li class="list-group-item">Name: ${product1.name}</li>
+
                                                     <li class="list-group-item">Price: ${product1.price}</li>
                                                     <li class="list-group-item">Factory: ${product1.factory}</li>
                                                 </ul>

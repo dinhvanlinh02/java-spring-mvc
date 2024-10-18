@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import vn.hoidanit.laptopshop.domain.Product;
 import vn.hoidanit.laptopshop.domain.User;
@@ -39,7 +41,9 @@ public class HomePageController {
     public String getHomePage(Model model) {
         List<Product> products = this.productService.fetchProduct();
         model.addAttribute("products", products);
+
         return "client/homepage/show";
+
     }
 
     @GetMapping("/register")
@@ -71,5 +75,10 @@ public class HomePageController {
     @GetMapping("/login")
     public String getLoginPage(Model model) {
         return "client/auth/login";
+    }
+
+    @GetMapping("/access-deny")
+    public String getDenyPage(Model model) {
+        return "client/auth/deny";
     }
 }

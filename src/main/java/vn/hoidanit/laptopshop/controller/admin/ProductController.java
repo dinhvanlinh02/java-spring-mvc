@@ -38,7 +38,7 @@ public class ProductController {
 
     @GetMapping("/admin/product")
     public String getProduct(Model model) {
-        List<Product> prs = this.productService.fetchProduct();
+        List<Product> prs = this.productService.fetchProducts();
         model.addAttribute("products", prs);
         return "admin/product/show";
     }
@@ -59,7 +59,7 @@ public class ProductController {
         String image = this.uploadService.handleSaveUploadFile(file, "product");
         pr.setImage(image);
 
-        this.productService.CreateProduct(pr);
+        this.productService.createProduct(pr);
 
         return "redirect:/admin/product";
     }
@@ -114,7 +114,7 @@ public class ProductController {
             currentProduct.setFactory(pr.getFactory());
             currentProduct.setTarget(pr.getTarget());
 
-            this.productService.CreateProduct(currentProduct);
+            this.productService.createProduct(currentProduct);
         } else {
             model.addAttribute("errorMessage", "Product not found for ID: " + pr.getId());
             return "admin/product/update";

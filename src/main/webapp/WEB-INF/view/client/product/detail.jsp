@@ -61,7 +61,7 @@
                                 <div class="col-lg-6">
                                     <div class="border rounded">
                                         <a href="#">
-                                            <img src="/images/product/${product1.image}" class="img-fluid rounded"
+                                            <img src="/images/product/${product.image}" class="img-fluid rounded"
                                                 alt="Image">
                                         </a>
                                     </div>
@@ -70,7 +70,7 @@
                                     <h4 class="fw-bold mb-3">${product1.name}</h4>
                                     <p class="mb-3">${product1.factory}</p>
                                     <h5 class="fw-bold mb-3">
-                                        <fmt:formatNumber type="number" value="${product1.price}" /> đ
+                                        <fmt:formatNumber type="number" value="${product.price}" /> đ
                                     </h5>
                                     <div class="d-flex mb-4">
                                         <i class="fa fa-star text-secondary"></i>
